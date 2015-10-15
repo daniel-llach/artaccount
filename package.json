@@ -1,7 +1,7 @@
 {
   "name": "caldearteaccount",
   "description": "The Caldearte account module",
-  "version": "0.2",
+  "version": "1.1.1",
   "private": true,
   "author": "daniel-llach",
   "license": "MIT",
