@@ -81,9 +81,9 @@ app.get('/secret', jwtauth, requireAuth, function(req, res){
 app.post('/register', function(req, res){
 console.log("register post start2");
 var user = new UserModel();
-user.username = req.body.username;
-user.password = req.body.password;
-user.plan = req.body.plan;
+user.username = req.param('username');
+user.password = req.param('password');
+user.plan = req.param('plan');
 console.log("user: ", user);
 
 user.save(function(err){
