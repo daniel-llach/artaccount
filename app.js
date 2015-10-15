@@ -72,5 +72,5 @@ var server = app.listen(process.env.PORT || 5000, function() {
  * Protected routes
  */
 app.get('/secret', jwtauth, requireAuth, function(req, res){
-	res.json(req.user[0]); // pass the user data
+	res.json(req.user); // pass the user data
 })
