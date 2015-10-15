@@ -79,19 +79,23 @@ app.get('/secret', jwtauth, requireAuth, function(req, res){
  * Unprotected routes
  */
 app.post('/register', function(req, res){
-console.log("register post start2");
-var user = new UserModel();
-user.username = req.param('username');
-user.password = req.param('password');
-user.plan = req.param('plan');
-console.log("user: ", user);
+  var user = new UserModel();
+  user.username = req.param('username');
+  user.password = req.param('password');
+  user.plan = req.param('plan');
+  console.log("user: ", user);
 
-user.save(function(err){
-	if (err) {
-		console.log('Could not save user.'.red);
-	} else {
-		console.log('Database seeded'.green)
-	}
-	process.exit()
-})
+  user.save(function(err){
+  	if (err) {
+  		console.log('Could not save user.'.red);
+      res.status(400).send('Could not save user');
+  	} else {
+  		console.log('Database seeded'.green)
+      // show new user info
+      res.json({
+        user: user.toJSON()
+      })
+  	}
+  	// process.exit()
+  })
 });

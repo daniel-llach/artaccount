@@ -24,17 +24,13 @@ UserSchema.pre('save', function(next) {
 
     // only hash the password if it has been modified (or is new)
     if (!user.isModified('password')) return next();
-    console.log("before bcrypt");
     // generate a salt
-    bcrypt.genSalt(config.salt, function(err, salt) {
-        console.log("after bcrypt");
-
+    var salt = config.salt
+    bcrypt.genSalt(10, function(err, salt) {
         if (err) return next(err);
-
         // hash the password along with our new salt
         bcrypt.hash(user.password, salt, function(err, hash) {
             if (err) return next(err);
-
             // override the cleartext password with the hashed one
             user.password = hash;
             next();
