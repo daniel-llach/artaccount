@@ -1,0 +1,18 @@
+{
+  "name": "caldearteaccount",
+  "description": "The Caldearte account module",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.13.3",
+    "body-parser": "1.13.3",
+    "colors": "0.6.2",
+    "mongoose": "4.1.2",
+    "bcrypt": "0.8.4",
+    "moment": "2.6.0",
+    "jwt-simple": "0.2.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
