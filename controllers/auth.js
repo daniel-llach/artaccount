@@ -41,8 +41,8 @@ module.exports.set = function(app) {
 						);
 						res.json({
 							token : token,
-							expires : expires,
-							user : user.toJSON()
+							expires : expires
+							// user : user.toJSON()
 						});
 					} else {
 						// The password is wrong...
