@@ -27,3 +27,14 @@ $.ajax({
            console.log("user: ", data);
   });
 ```
+
+3.- register a new user
+```javascript
+  $.get('http://artaccount.herokuapp.com/register', {
+		username: 'daniel',
+		password: 'pass',
+		plan: 'premium' // premium, free
+	}, function(data){
+           console.log("new_user: ", data);
+  });
+```
