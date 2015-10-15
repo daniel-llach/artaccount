@@ -79,7 +79,7 @@ app.get('/secret', jwtauth, requireAuth, function(req, res){
  * Unprotected routes
  */
 app.post('/register', function(req, res){
-console.log("register post start");
+console.log("register post start2");
 var user = new UserModel();
 user.username = req.body.username;
 user.password = req.body.password;
