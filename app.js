@@ -74,3 +74,24 @@ var server = app.listen(process.env.PORT || 5000, function() {
 app.get('/secret', jwtauth, requireAuth, function(req, res){
 	res.json(req.user); // pass the user data
 })
+
+/**
+ * Unprotected routes
+ */
+app.post('/register', function(req, res){
+console.log("register post start");
+var user = new UserModel();
+user.username = req.body.username;
+user.password = req.body.password;
+user.plan = req.body.plan;
+console.log("user: ", user);
+
+user.save(function(err){
+	if (err) {
+		console.log('Could not save user.'.red);
+	} else {
+		console.log('Database seeded'.green)
+	}
+	process.exit()
+})
+});
