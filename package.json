@@ -1,8 +1,13 @@
 {
   "name": "caldearteaccount",
   "description": "The Caldearte account module",
-  "version": "0.0.1",
+  "version": "0.2",
   "private": true,
+  "author": "daniel-llach",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "express": "4.13.3",
     "body-parser": "1.13.3",
@@ -12,7 +17,7 @@
     "moment": "2.6.0",
     "jwt-simple": "0.2.0"
   },
-  "scripts": {
-    "start": "node app.js"
+  "engines": {
+    "node": "0.11.13"
   }
 }
