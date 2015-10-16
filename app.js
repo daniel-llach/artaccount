@@ -29,9 +29,10 @@ mongoose.connect('mongodb://' + config.db_user + ':' + config.db_password + '@' 
  * NOTE: purposely not using var so that app is accesible in modules.
  */
 app = express();
-app.all('*', function(req, res, next) {
+app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Key");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 app.use(bodyParser.json());
