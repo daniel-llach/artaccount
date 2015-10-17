@@ -30,11 +30,11 @@ $.ajax({
 
 3.- register a new user
 ```javascript
-  $.get('http://artaccount.herokuapp.com/register', {
+  $.post('http://artaccount.herokuapp.com/register', {
 		username: 'daniel',
 		password: 'pass',
 		plan: 'premium' // premium, free
 	}, function(data){
-           console.log("new_user: ", data);
+  	console.log("new_user: ", data);
   });
 ```
